@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CodeJamPractice.iml" filepath="$PROJECT_DIR$/.idea/modules/CodeJamPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CodeJamPractice_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CodeJamPractice_main.iml" group="CodeJamPractice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CodeJamPractice_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CodeJamPractice_test.iml" group="CodeJamPractice" />
+    </modules>
+  </component>
+</project>
