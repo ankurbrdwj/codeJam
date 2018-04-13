@@ -33,8 +33,8 @@ public class Pair<K, V> implements Comparable {
     @Override
     public int compareTo(Object o) {
 
-        if (Integer.valueOf((int) this.getKey()) >= Integer.valueOf((int) ((Pair) o).getKey()))
-            return -1;
-        else return 1;
+        if (Integer.valueOf((Integer)this.getKey()) >= Integer.valueOf((Integer) ((Pair) o).getKey()))
+            return 1;
+        else return -1;
     }
 }

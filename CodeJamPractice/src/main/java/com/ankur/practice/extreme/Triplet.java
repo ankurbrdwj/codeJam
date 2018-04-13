@@ -130,7 +130,6 @@ public class Triplet implements Comparable {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(sum, count, value);
     }
 }

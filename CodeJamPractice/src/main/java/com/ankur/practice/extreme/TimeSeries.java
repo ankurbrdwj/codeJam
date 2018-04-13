@@ -12,10 +12,9 @@ import java.util.*;
 9 11
 3 5
 should out put
-3// number of lines
+2// number of lines
 2 5
-6 9
-9 11
+6 11
  */
 public class TimeSeries {
     public TimeSeries() {
@@ -26,16 +25,16 @@ public class TimeSeries {
         List<Pair> list = new ArrayList<Pair>();
         Map<Integer, Triplet> map = new HashMap<Integer, Triplet>();
         try {
-            scan = new Scanner(new FileInputStream("src/main/resources/TimeSeries/input.txt"));
-            int num = Integer.parseInt(scan.nextLine());
+            scan = new Scanner( new FileInputStream( "src/main/resources/TimeSeries/input.txt" ) );
+            int num = Integer.parseInt( scan.nextLine() );
             for (int i = 0; i < num; i++) {
-                String[] line = scan.nextLine().split(" ");
-                Integer begin = Integer.parseInt(line[0]);
-                Integer end = Integer.parseInt(line[1]);
-                Pair pair = new Pair(begin, end);
-                list.add(pair);
+                String[] line = scan.nextLine().split( " " );
+                Integer begin = Integer.parseInt( line[0] );
+                Integer end = Integer.parseInt( line[1] );
+                Pair pair = new Pair( begin, end );
+                list.add( pair );
             }
-            Collections.sort(list);
+            Collections.sort( list );
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } finally {
@@ -50,12 +49,13 @@ public class TimeSeries {
 
         List<Pair> newList = new ArrayList<Pair>();
         for (int i = 1; i < list.size(); i++) {
-            Pair p1 = list.get(i - 1);
-            Pair p2 = list.get(i);
-            if (Integer.valueOf((int) p1.getValue()) >= Integer.valueOf((int) p2.getKey())) {
-                p1.setValue(p2.getKey());
-                newList.add(p1);
+            Pair p1 = list.get( i - 1 );
+            Pair p2 = list.get( i );
+            if (Integer.valueOf( (int) p1.getValue() ) >= Integer.valueOf( (int) p2.getKey() )) {
+                p1.setValue( p2.getValue() );
+                newList.add( p1 );
             }
         }
-    }
+    return newList;
+}
 }
