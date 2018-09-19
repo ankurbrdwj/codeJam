@@ -63,7 +63,7 @@ public class BinarySearchTree<A extends Comparable<A>> {
 
     public int getHeight(Node root) {
         if (root == null) {
-            return 0;
+            return -1;
         }
        return Math.max(getHeight(root.left),getHeight(root.right)+1);
     }
@@ -74,16 +74,19 @@ public class BinarySearchTree<A extends Comparable<A>> {
     }
 
     public boolean isBalanced(Node root){
-        if(root == null){
+        if(getHeight(root) == 0){
             return true;
         }
         int leftHeight = getHeight(root.left);
+        if (leftHeight == -1)
+            return false;
         int rightHeight = getHeight(root.right);
-
-        if (Math.abs(leftHeight-rightHeight)>1 && isBalanced(root.left) && isBalanced(root.right)){
-            return true;
+        if (rightHeight == -1)
+            return false;
+        if (Math.abs(leftHeight-rightHeight) >1){
+            return false;
         }
-        return false;
+        return true;
     }
 
 }
