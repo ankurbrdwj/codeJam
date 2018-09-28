@@ -1,6 +1,8 @@
 package com.ankur.practice.trees;
 
+import java.util.ArrayDeque;
 import java.util.Comparator;
+import java.util.Deque;
 
 public class BinarySearchTree<A extends Comparable<A>> {
 
@@ -88,8 +90,53 @@ public class BinarySearchTree<A extends Comparable<A>> {
         }
         return true;
     }
+    //
+   public void  inOrderTraversal(Node root){
+        if(root == null)
+            return;
+       inOrderTraversal(root.left);
+       System.out.print(root.data+ " ");
+       inOrderTraversal(root.right);
+    }
+    public void  preOrderTraversal(Node root){
+        if(root == null)
+            return;
+        System.out.print(root.data+ " ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+    public void  postOrderTraversal(Node root){
+        if(root == null)
+            return;
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.print(root.data+ " ");
+    }
+    public void levelOrderTraversal(Node root){
+        if(root==null)
+            return;
+    }
 
-}
+    public void depthFirstTraversal(Node root){
+            if(root == null) {
+                return;
+            }
+            Deque<Node> nodeStack = new ArrayDeque<Node>();
+            nodeStack.push(root);
+
+            while(!nodeStack.isEmpty()) {
+                Node node = nodeStack.pop();
+                System.out.print(node.data + " ");
+
+                if(node.right != null) {
+                    nodeStack.push(node.right);
+                }
+                if(node.left != null) {
+                    nodeStack.push(node.left);
+                }
+            }
+        }
+    }
 
 class Node<T extends Comparable<T>>{
     T data;
