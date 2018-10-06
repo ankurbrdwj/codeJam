@@ -1,4 +1,5 @@
 .idea/
+*target/*
 *.pb
 CodeJamPractice/.idea/workspace.xml
 CodeJamPractice/.idea/workspace.xml
