@@ -29,7 +29,7 @@ public class HourGlass {
 
     public static void main(String[] args) throws IOException {
         // BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
+        System.out.println(multiply(4.66,7.7778));
         int[][] arr = new int[6][6];
 
         for (int i = 0; i < 6; i++) {
@@ -41,7 +41,7 @@ public class HourGlass {
                 arr[i][j] = arrItem;
             }
         }
-
+        System.out.println(multiply(4.66,7.7778));
         int result = hourglassSum(arr);
 
         // bufferedWriter.write(String.valueOf(result));
@@ -50,5 +50,8 @@ public class HourGlass {
         //  bufferedWriter.close();
 
         scanner.close();
+    }
+    public static Double multiply(Double a, Double b) {
+        return a * b;
     }
 }
